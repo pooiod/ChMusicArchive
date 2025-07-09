@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <title>CH Music Archive</title>
-    <base href="https://pooiod.github.io/ChMusicArchive">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -305,7 +304,7 @@
             font-weight: 700;
             background-size: cover;
             background-position: center;
-            background-image: url('/note.png');
+            background-image: url('note.png');
         }
 
         .now-playing-title {
@@ -595,7 +594,7 @@
 
         async function init() {
             try {
-                const response = await fetch('/songs.json');
+                const response = await fetch('songs.json');
                 state.songs = await response.json();
                 
                 renderLibrarySongs();
@@ -682,7 +681,7 @@
             elements.favoriteBtn.className = state.favorites.includes(song.file) ? 
                 'favorite-btn active' : 'favorite-btn';
             
-            state.audio.src = `/music/${song.file}`;
+            state.audio.src = `music/${song.file}`;
             state.audio.load();
             state.audio.play()
                 .then(() => {
@@ -699,12 +698,12 @@
                     artist: 'CH__', 
                     album: 'CH Music Archive',
                     artwork: [
-                        { src: '/cover.webp', sizes: '96x96', type: 'image/webp' },
-                        { src: '/cover.webp', sizes: '128x128', type: 'image/webp' },
-                        { src: '/cover.webp', sizes: '192x192', type: 'image/webp' },
-                        { src: '/cover.webp', sizes: '256x256', type: 'image/webp' },
-                        { src: '/cover.webp', sizes: '384x384', type: 'image/webp' },
-                        { src: '/cover.webp', sizes: '512x512', type: 'image/webp' },
+                        { src: 'cover.webp', sizes: '96x96', type: 'image/webp' },
+                        { src: 'cover.webp', sizes: '128x128', type: 'image/webp' },
+                        { src: 'cover.webp', sizes: '192x192', type: 'image/webp' },
+                        { src: 'cover.webp', sizes: '256x256', type: 'image/webp' },
+                        { src: 'cover.webp', sizes: '384x384', type: 'image/webp' },
+                        { src: 'cover.webp', sizes: '512x512', type: 'image/webp' },
                     ]
                 });
             }
